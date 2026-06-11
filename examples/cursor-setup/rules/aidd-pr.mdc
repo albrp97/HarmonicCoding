@@ -1,6 +1,0 @@
----
-description: Triage and manage a pull request using AIDD workflow. Use when: user pastes a PR URL, a PR needs review or triage, changes need summarizing, or inline fixes need delegating.
-alwaysApply: false
----
-
-Load and follow the workflow in `ai/skills/aidd-pr/SKILL.md`.

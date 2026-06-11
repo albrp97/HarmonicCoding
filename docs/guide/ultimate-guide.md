@@ -55,7 +55,7 @@ Every agent reads this file before every session. Make it authoritative.
 - Migrations are append-only
 ```
 
-**Locations**: Write this as both `AGENTS.md` (OpenAI Codex / Cursor standard) and `.github/copilot-instructions.md` (GitHub Copilot) — same content, different file names. Both serve the same function.
+**Locations**: Write this as both `AGENTS.md` (cross-tool agent spec, read by OpenCode and most agents) and `.github/copilot-instructions.md` (GitHub Copilot) — same content, different file names. Both serve the same function.
 
 #### 2. Create the vision.md (AIDD)
 
@@ -102,7 +102,7 @@ For each major subsystem:
 #### 4. Install AIDD
 
 ```bash
-npx aidd --cursor  # Creates ai/ directory + .cursor symlink
+npx aidd  # Creates ai/ directory
 ```
 
 This copies 30+ skills into your project. The skills are yours — commit them, customize them.
@@ -344,10 +344,8 @@ Read the output. The top files by composite score are your highest-risk areas. A
 ### Step 2: Install AIDD
 
 ```bash
-npx aidd --cursor
+npx aidd
 ```
-
-Then create `aidd-custom/AGENTS.md` with project-specific rules:
 
 ```markdown
 # [Project Name] Agent Rules
@@ -504,55 +502,24 @@ With prompt caching: Sonnet 4.6 effective cost drops 40-60% for repeated context
 
 ## Part III-B: Tool Integration — Eliminating Manual Slash Commands
 
-By default, AIDD requires typing `/aidd-fix`, `/task`, `/discover`, etc. This section shows how to configure each editor so the agent auto-selects the right AIDD workflow based on what you say in plain language.
+By default, AIDD requires typing `/aidd-fix`, `/task`, `/discover`, etc. This section shows how to configure OpenCode and Copilot so the agent selects the right AIDD workflow based on what you say in plain language.
 
-**Important caveat**: AIDD commands are markdown instruction files — they are prompts the LLM follows, not shell executables. Only `npx aidd churn` is a real CLI command. The integration strategy is: teach the agent to load the right `SKILL.md` automatically.
+**Note**: AIDD commands are markdown instruction files — prompts the LLM follows, not shell executables. Only `npx aidd churn` is a real CLI command. The integration strategy is: teach the agent to load the right `SKILL.md` automatically.
 
 ### OpenCode — Zero Code (Native Skill Discovery)
 
 OpenCode has a built-in `skill` tool that auto-discovers and loads `SKILL.md` files. Setup is two commands:
 
 ```bash
-npx aidd --cursor          # installs ai/ directory
+npx aidd                               # installs ai/ directory
 mkdir -p .opencode && ln -s ../ai/skills .opencode/skills
 ```
 
-All 35 AIDD skills are now auto-invokable. OpenCode reads skill descriptions from `ai/skills/index.md` and selects the right skill when your message matches.
+All 35 AIDD skills are now auto-invokable. OpenCode reads skill descriptions from `ai/skills/index.md` and selects the right skill when your message matches. Say "fix this bug" → it loads `aidd-fix` workflow automatically.
 
-### Cursor — Agent-Selected Rules (Zero Code)
+### GitHub Copilot — Instructions-Based Routing
 
-Cursor's "agent-selected" rules have a `description:` frontmatter — the agent reads all descriptions and auto-applies matching rules based on user intent.
-
-Copy the ready-to-use rules from `examples/cursor-setup/rules/` to your project's `.cursor/rules/`:
-
-```bash
-cp examples/cursor-setup/rules/* .cursor/rules/
-```
-
-After this: saying "there's a bug in auth.js" auto-loads `aidd-fix` workflow. "Review this code" auto-loads `aidd-review`. No slash commands needed.
-
-### Claude Code — MCP Server
-
-Create `.mcp.json` at project root:
-
-```json
-{
-  "mcpServers": {
-    "aidd": {
-      "command": "npx",
-      "args": ["-y", "aidd-mcp-server"]
-    }
-  }
-}
-```
-
-The MCP server exposes `aidd_skill_list`, `aidd_skill_load`, and `aidd_churn` as auto-selectable tools. Claude Code picks the right one based on user intent.
-
-See `docs/research/07-tool-integration.md` for the full MCP server implementation (~50 lines of Node.js).
-
-### GitHub Copilot — Instructions Only
-
-Copilot has no MCP support. Best available: `AGENTS.md` + `.github/copilot-instructions.md` with explicit routing hints:
+Copilot has no tool auto-selection layer. Best available: explicit routing instructions in `.github/copilot-instructions.md`:
 
 ```markdown
 ## AIDD Workflow Routing
@@ -560,18 +527,19 @@ When fixing bugs: load and follow `ai/skills/aidd-fix/SKILL.md`
 When building features: load `ai/skills/aidd-please/SKILL.md` and run /task
 When reviewing code: load `ai/skills/review/SKILL.md`
 When analyzing risk: run `npx aidd churn --days 90`
+When deep reasoning needed: load `ai/skills/aidd-rtc/SKILL.md`
 ```
 
-Copilot follows these when intent is clear — but requires natural language hints, not function-calling auto-selection.
+Copilot follows these when intent is clear. For unattended/bulk work, `gh copilot agent run` can be given an explicit skill path — see `docs/research/07-tool-integration.md`.
 
-### Platform Summary
+### Summary
 
-| Platform | Auto-selects? | Setup effort | Reference |
-|----------|--------------|--------------|-----------|
-| OpenCode | ✅ Native | 2 commands | `ln -s ai/skills .opencode/skills` |
-| Cursor | ✅ Via rules | Copy 10 files | `examples/cursor-setup/` |
-| Claude Code | ✅ Via MCP | ~50 lines | `docs/research/07-tool-integration.md` |
-| Copilot | ⚠️ Instructions | Zero extra | AGENTS.md already generated by AIDD |
+| | OpenCode | GitHub Copilot |
+|--|----------|----------------|
+| **Auto-selects AIDD skills** | ✅ Native `skill` tool | ⚠️ Instructions-based |
+| **Setup** | 2 commands | Add routing block to copilot-instructions.md |
+| **Unattended/bulk ops** | No | ✅ `gh copilot agent run` |
+| **Best for** | Interactive daily dev | Bulk/scheduled tasks |
 
 ---
 

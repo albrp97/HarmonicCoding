@@ -1,6 +1,0 @@
----
-description: Implement a feature using AIDD TDD workflow. Use when: an epic or spec is ready and the user wants to implement it, user says build/implement/code this, or a task is approved and ready for development.
-alwaysApply: false
----
-
-Load `ai/skills/aidd-please/SKILL.md` and run the /execute command.

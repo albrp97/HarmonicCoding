@@ -1,6 +1,0 @@
----
-description: Analyze codebase hotspots to find high-risk files before refactoring. Use when: user wants to know what to refactor, where technical debt lives, before touching legacy code, or when deciding where to focus work.
-alwaysApply: false
----
-
-Run `npx aidd churn --days 90 --top 20` and summarize the highest-scoring files (Score = LoC × git churn × cyclomatic complexity). Flag any file with Cx > 9, LoC > 400, or composite score > 10,000 as requiring refactor before AI-assisted changes.
