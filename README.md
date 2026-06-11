@@ -17,6 +17,10 @@ Harmonic Coding treats the synthesis of human intention and machine execution as
 
 ## Contents
 
+- [Research findings](./docs/research/meeting-findings.md)
+- [Concept deep dive](./docs/research/concept-deep-dive.md)
+- [Further reading](./docs/research/further-reading.md)
+- [Developer guide](./docs/guide/developer-guide.md)
 - Methodology documentation
 - Best practices for spec-driven AI development
 - Copilot integration patterns
@@ -25,7 +29,7 @@ Harmonic Coding treats the synthesis of human intention and machine execution as
 
 ## Getting Started
 
-[Documentation coming soon]
+Start with the [developer guide](./docs/guide/developer-guide.md), then read the [meeting findings](./docs/research/meeting-findings.md) and the [concept deep dive](./docs/research/concept-deep-dive.md).
 
 ---
 
