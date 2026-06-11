@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+  <!-- Background -->
+  <rect width="1200" height="400" fill="#0a0e27"/>
+  
+  <!-- Subtle grid -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a2342" stroke-width="0.5"/>
+    </pattern>
+    <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#4a9eff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a9eff;stop-opacity:0" />
+    </linearGradient>
+    <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4a7a;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#ff4a7a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff4a7a;stop-opacity:0" />
+    </linearGradient>
+    <linearGradient id="convergenceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff4a7a;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="400" fill="url(#grid)"/>
+  
+  <!-- Title text -->
+  <text x="600" y="40" font-family="monospace" font-size="32" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="4">
+    HARMONIC CODING
+  </text>
+  
+  <!-- Human Directive Wave (top) - flowing down -->
+  <path d="M 0 120 Q 75 100 150 120 T 300 120 T 450 120 T 600 120 T 750 120 T 900 120 T 1050 120 T 1200 120" 
+        fill="none" stroke="url(#waveGradient1)" stroke-width="3" opacity="0.8"/>
+  <path d="M 0 120 Q 75 100 150 120 T 300 120 T 450 120 T 600 120 T 750 120 T 900 120 T 1050 120 T 1200 120" 
+        fill="none" stroke="#4a9eff" stroke-width="1" opacity="0.3" stroke-dasharray="5,5"/>
+  
+  <!-- AI Execution Wave (bottom) - flowing up -->
+  <path d="M 0 280 Q 75 300 150 280 T 300 280 T 450 280 T 600 280 T 750 280 T 900 280 T 1050 280 T 1200 280" 
+        fill="none" stroke="url(#waveGradient2)" stroke-width="3" opacity="0.8"/>
+  <path d="M 0 280 Q 75 300 150 280 T 300 280 T 450 280 T 600 280 T 750 280 T 900 280 T 1050 280 T 1200 280" 
+        fill="none" stroke="#ff4a7a" stroke-width="1" opacity="0.3" stroke-dasharray="5,5"/>
+  
+  <!-- Convergence zone (center) - harmonic synthesis -->
+  <ellipse cx="600" cy="200" rx="200" ry="100" fill="url(#convergenceGradient)" opacity="0.4"/>
+  
+  <!-- Central resonance line -->
+  <line x1="0" y1="200" x2="1200" y2="200" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+  <line x1="0" y1="200" x2="1200" y2="200" stroke="#ffffff" stroke-width="0.5" opacity="0.3" stroke-dasharray="10,10"/>
+  
+  <!-- Connection points at convergence -->
+  <circle cx="400" cy="200" r="3" fill="#4a9eff" opacity="0.8"/>
+  <circle cx="600" cy="200" r="5" fill="#ffffff" opacity="1"/>
+  <circle cx="800" cy="200" r="3" fill="#ff4a7a" opacity="0.8"/>
+  
+  <!-- Subtitle -->
+  <text x="600" y="360" font-family="monospace" font-size="14" fill="#888888" text-anchor="middle" letter-spacing="2">
+    Human Intent → Harmonic Synthesis ← Machine Execution
+  </text>
+</svg>
