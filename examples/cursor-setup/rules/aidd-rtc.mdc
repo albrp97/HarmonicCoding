@@ -1,0 +1,6 @@
+---
+description: Use Reflective Thought Composition for structured deep reasoning. Use when: a problem is ambiguous, tradeoffs need weighing, a spec section is unclear, an architecture decision needs analysis, or a debugging path is non-obvious.
+alwaysApply: false
+---
+
+Load and follow the workflow in `ai/skills/aidd-rtc/SKILL.md`.

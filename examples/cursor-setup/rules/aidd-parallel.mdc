@@ -1,0 +1,6 @@
+---
+description: Run AIDD parallel task execution for a large feature with independent sub-tasks. Use when: a feature can be decomposed into N independent tasks with no shared state, or multiple agents could work concurrently.
+alwaysApply: false
+---
+
+Load `ai/skills/aidd-please/SKILL.md` and run the /aidd-parallel command.

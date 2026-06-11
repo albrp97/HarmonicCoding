@@ -1,0 +1,6 @@
+---
+description: Create a task epic for a feature. Use when: a feature is defined and needs to be broken into requirements, user wants to spec out what to build before implementing, or a story needs an epic.
+alwaysApply: false
+---
+
+Load `ai/skills/aidd-please/SKILL.md` and run the /task command.

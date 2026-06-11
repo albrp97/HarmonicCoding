@@ -1,0 +1,6 @@
+---
+description: Review code for quality, spec compliance, and completeness using AIDD standards. Use when: implementation is done and needs review, a PR is ready, or the user asks for code review.
+alwaysApply: false
+---
+
+Load and follow the workflow in `ai/skills/review/SKILL.md`.

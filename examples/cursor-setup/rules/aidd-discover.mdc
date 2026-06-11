@@ -1,0 +1,6 @@
+---
+description: Run product discovery for a feature or project area. Use when: starting a new feature, user wants personas or user journeys, unclear what to build, or pain points need mapping.
+alwaysApply: false
+---
+
+Load `ai/skills/aidd-please/SKILL.md` and run the /discover command.

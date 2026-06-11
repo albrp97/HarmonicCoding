@@ -35,6 +35,20 @@ Advanced framework for human-directed AI engineering. Synthesizes spec-driven de
 | [Token Economics](./docs/research/04-token-economics.md) | Current model pricing, real cost of spec-driven cycles, breakeven analysis, optimization strategies, budget controls |
 | [Workshop Intelligence](./docs/research/00-transcript-intelligence.md) | Extracted intelligence from an internal AI engineering workshop: case studies, numbers, direct quotes, techniques demonstrated in production |
 
+### Phase 3 — Tool Integration
+
+| Document | What it covers |
+|----------|----------------|
+| [Tool Integration](./docs/research/07-tool-integration.md) | Wiring AIDD as auto-invoked tools in OpenCode, Cursor, Claude Code, and Copilot — no slash commands needed |
+
+---
+
+## Examples
+
+| Example | What it provides |
+|---------|-----------------|
+| [Cursor Setup](./examples/cursor-setup/) | Ready-to-use `.cursor/rules/*.mdc` files for all key AIDD skills. Copy to `.cursor/rules/` and Cursor auto-selects the right workflow from natural language. |
+
 ---
 
 ## Core Ideas

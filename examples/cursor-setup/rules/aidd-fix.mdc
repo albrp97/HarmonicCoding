@@ -1,0 +1,6 @@
+---
+description: Fix a bug using the AIDD TDD process. Use when: a bug is reported, a test is failing, review feedback requires a code change, or an error was thrown in production.
+alwaysApply: false
+---
+
+Load and follow the workflow in `ai/skills/aidd-fix/SKILL.md`.
