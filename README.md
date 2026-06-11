@@ -1,6 +1,6 @@
 # Harmonic Coding
 
-![Harmonic Coding](./harmonic-coding-banner-v7-final.svg)
+![Harmonic Coding](./harmonic-coding-banner.svg)
 
 A comprehensive framework for human-directed AI coding combining spec-driven development, Copilot best practices, and AI-driven design patterns (AIDD).
 
