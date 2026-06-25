@@ -2,7 +2,7 @@
 
 ![Harmonic Coding](./harmonic-coding-banner.svg)
 
-Advanced framework for human-directed AI engineering. Synthesizes spec-driven development, the AIDD framework, context architecture, automation patterns, and the economics of AI-assisted production work — sourced from production use, official guidance, and real case studies.
+Advanced framework for human-directed AI engineering. Synthesizes spec-driven development, the AIDD framework, workflow orchestration, context architecture, automation patterns, and the economics of AI-assisted production work — sourced from production use, official guidance, and real case studies.
 
 ---
 
@@ -13,6 +13,10 @@ Advanced framework for human-directed AI engineering. Synthesizes spec-driven de
 **→ [AIDD Guide](./docs/guide/aidd-guide.md)** — Practical guide to the AIDD framework: setup, workflow commands, vision documents, hotspot analysis, custom skills.
 
 **→ [Advanced Playbook](./docs/guide/advanced-playbook.md)** — SDD operations manual: repo setup, spec writing, implementation loops, quality gates, automation at scale.
+
+**→ [Developer Guide](./docs/guide/developer-guide.md)** — Copilot-first workflow selection for Aider, AutoGen, LangGraph, Agno, CrewAI, Pydantic AI, and OpenHands/SWE-agent.
+
+**→ [Setup Guide](./docs/guide/setup-guide.md)** — Baseline repo files, optional tool installs, and recommended context wiring.
 
 ---
 
@@ -40,6 +44,18 @@ Advanced framework for human-directed AI engineering. Synthesizes spec-driven de
 | Document | What it covers |
 |----------|----------------|
 | [Tool Integration](./docs/research/07-tool-integration.md) | Wiring AIDD as auto-invoked tools in OpenCode and Copilot — no slash commands needed |
+
+### Phase 4 — Workflow Orchestration Tools
+
+| Document | What it covers |
+|----------|----------------|
+| [Aider](./docs/research/08-aider.md) | Terminal pair-programming with git diffs and repo-aware edits |
+| [AutoGen](./docs/research/09-autogen.md) | Multi-agent orchestration, MCP workbenches, and AutoGen Studio |
+| [CrewAI](./docs/research/10-crewai.md) | Role-based crews, flows, and coding-agent skills |
+| [LangGraph](./docs/research/11-langgraph.md) | Stateful step graphs, durable execution, human-in-the-loop control |
+| [Pydantic AI](./docs/research/12-pydantic-ai.md) | Typed agent workflows, structured outputs, and approval gates |
+| [Agno](./docs/research/13-agno.md) | Agent platform/runtime, scheduling, RBAC, and control plane |
+| [OpenHands + SWE-agent](./docs/research/14-openhands-swe-agent.md) | Autonomous issue-to-fix execution and self-hosted agent control centers |
 
 ---
 
