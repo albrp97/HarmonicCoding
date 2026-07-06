@@ -2,18 +2,13 @@
 
 ![Harmonic Coding](./harmonic-coding-banner.svg)
 
-> A repository-based runtime for disciplined AI-assisted software delivery.
+> A repository system for planning, building, reviewing, and shipping software with AI in a controlled way.
 
-Harmonic Coding is not just research about AI engineering. It is now a **working repo runtime** made of:
+Harmonic Coding is a **repo-based operating model for Human Directed AI-assisted software development**. It was created to solve a simple problem: most AI coding work is too session-based, too fragile, and too dependent on whatever the model happens to remember in the current chat.
 
-- persistent instruction files
-- reusable workflow prompts
-- local skill entrypoints
-- planning and delivery guides
-- review, user-testing, and pipeline workflows
-- lightweight workflow contract evals
+The project exists to make that work **durable, structured, and repeatable**. Instead of relying on one-off prompts, Harmonic Coding puts the operating logic inside the repository itself through instructions, planning flows, delivery workflows, review loops, reusable skills, and validation checks.
 
-The goal is to make AI-assisted development behave like a repeatable engineering system instead of an ad hoc chat habit.
+In practice, it helps a project go from **understanding the objective**, to **breaking work into epics/phases/tickets**, to **setting up delivery and CI expectations**, to **implementing features**, to **reviewing, testing, repairing, and merging work** with a consistent process.
 
 ## Skills and workflows included
 
