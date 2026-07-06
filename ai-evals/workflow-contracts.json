@@ -1,0 +1,53 @@
+{
+  "checks": [
+    {
+      "name": "root instructions exist",
+      "type": "file_exists",
+      "path": "AGENTS.md"
+    },
+    {
+      "name": "copilot instructions exist",
+      "type": "file_exists",
+      "path": ".github/copilot-instructions.md"
+    },
+    {
+      "name": "instruction files exist",
+      "type": "glob_min",
+      "pattern": ".github/instructions/*.instructions.md",
+      "min": 5
+    },
+    {
+      "name": "custom skills exist",
+      "type": "glob_min",
+      "pattern": "harmonic-custom/skills/*/SKILL.md",
+      "min": 10
+    },
+    {
+      "name": "new project guide is linked from README",
+      "type": "contains_all",
+      "path": "README.md",
+      "all": [
+        "New Project Guide",
+        "./docs/guide/new-project-guide.md"
+      ]
+    },
+    {
+      "name": "delivery workflows mention prompt usage and skills",
+      "type": "contains_all",
+      "path": "docs/guide/delivery-workflows.md",
+      "all": [
+        "Prompt usage",
+        "When to turn a workflow into a skill"
+      ]
+    },
+    {
+      "name": "gap plan includes final documentation phase",
+      "type": "contains_all",
+      "path": "docs/guide/aidd-gap-closure-plan.md",
+      "all": [
+        "## Phase 13",
+        "final repo and guide documentation for new-project usage"
+      ]
+    }
+  ]
+}

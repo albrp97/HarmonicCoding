@@ -12,6 +12,17 @@ Start with the existing Harmonic Coding docs.
 2. Use AIDD when you need discovery, task breakdown, or a disciplined execution loop.
 3. Add one of the workflow tools below only when the task genuinely needs it.
 
+Before implementation starts, use `docs/guide/delivery-workflows.md` as the repo-shaping checklist:
+- objective
+- problem / users / success
+- scope
+- capability map
+- epics
+- phases
+- tickets / backlog
+- review gates
+- setup / CI/CD
+
 ## Tool selection
 
 | Need | Use | Why |
@@ -38,18 +49,31 @@ Start with the existing Harmonic Coding docs.
 
 1. Read the relevant research doc and the current spec/guide.
 2. Write or refresh the spec before coding.
-3. Pick the smallest workflow tool that fits the task.
-4. Keep changes small and reviewable.
-5. Validate against tests, not just chat output.
+3. Prefer the repo-local skill or workflow entrypoint first when `harmonic-custom/skills/` or `.github/prompts/` already describes the task.
+4. Pick the smallest external workflow tool that fits the task when the local workflow layer is not enough.
+5. Keep changes small and reviewable.
+6. Validate against tests, not just chat output.
+
+## Review and repair loop
+
+When the task is supposed to be finished, do not stop at the first working pass.
+
+1. Compare the current implementation against the spec, `vision.md`, and repo instructions.
+2. Run the relevant tests, lint, and build checks.
+3. If you are comparing workflows, compare the result against the same benchmark or instructions in both variants.
+4. Fix blocking mismatches before moving on.
+5. Repeat until the implementation matches the requirements or you have a real blocker.
 
 ## What not to do
 
 - Do not use a full orchestration stack for a one-file fix.
 - Do not replace Copilot with another tool just because it exists.
 - Do not let the workflow tool invent scope that the spec did not define.
+- Do not stop while a blocking mismatch still exists between the code and the instructions.
 
 ## Related docs
 
+- `docs/guide/delivery-workflows.md`
 - `docs/research/01-spec-driven-development.md`
 - `docs/research/05-aidd-framework.md`
 - `docs/research/08-aider.md`

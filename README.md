@@ -18,6 +18,12 @@ Advanced framework for human-directed AI engineering. Synthesizes spec-driven de
 
 **→ [Setup Guide](./docs/guide/setup-guide.md)** — Baseline repo files, optional tool installs, and recommended context wiring.
 
+**→ [New Project Guide](./docs/guide/new-project-guide.md)** — Strict step-by-step instructions for using Harmonic Coding on a new repository from planning and setup through implementation readiness and ticket delivery.
+
+**→ [Delivery Workflows](./docs/guide/delivery-workflows.md)** — Reusable prompt workflows for project objective discovery, setup, CI/CD, PR flow, and ticket implementation loops.
+
+**→ [AIDD Gap Closure Plan](./docs/guide/aidd-gap-closure-plan.md)** — Ordered roadmap for adding the missing runtime, review, testing, and eval layers that would bring Harmonic Coding closer to a full AIDD-class AI coding system.
+
 ---
 
 ## Research

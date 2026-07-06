@@ -20,6 +20,8 @@ Speed is not the goal. **Sustainable, compounding leverage is the goal.** A bad 
 
 This takes 30 minutes. It saves hundreds of hours.
 
+If you want the repository-specific Harmonic Coding operating sequence, use `docs/guide/new-project-guide.md` together with `docs/guide/delivery-workflows.md`. The guide below is the broader operating manual; the new-project guide is the strict repo onboarding flow.
+
 #### 1. Create the AGENTS.md stack
 
 Every agent reads this file before every session. Make it authoritative.
@@ -77,6 +79,8 @@ Every agent reads this file before every session. Make it authoritative.
 ```
 
 Vision.md is stable. It does not change when you add features. It changes when the project's fundamental purpose changes — which is rare.
+
+**Use a master pre-implementation checklist**: before feature work begins, run the ordered workflow in `docs/guide/delivery-workflows.md` to shape the repo through objective, problem/users/success, scope, capability map, epics, phases, tickets, review gates, and setup/CI/CD.
 
 #### 3. Path-Scoped Rules
 
@@ -136,6 +140,8 @@ In CI (GitHub Actions or equivalent):
   run: npx jest --coverage
   # Minimum 80% line coverage for changed files
 ```
+
+After each implementation phase, run a review pass against the current spec and instructions, patch blocking mismatches, then rerun the quality gate before stopping.
 
 ---
 

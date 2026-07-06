@@ -1,0 +1,40 @@
+{
+  "pass_ratio": 1.0,
+  "results": [
+    {
+      "name": "root instructions exist",
+      "passed": true,
+      "detail": "AGENTS.md exists"
+    },
+    {
+      "name": "copilot instructions exist",
+      "passed": true,
+      "detail": ".github/copilot-instructions.md exists"
+    },
+    {
+      "name": "instruction files exist",
+      "passed": true,
+      "detail": "5 matches for .github/instructions/*.instructions.md (min 5)"
+    },
+    {
+      "name": "custom skills exist",
+      "passed": true,
+      "detail": "16 matches for harmonic-custom/skills/*/SKILL.md (min 10)"
+    },
+    {
+      "name": "new project guide is linked from README",
+      "passed": true,
+      "detail": "All required strings found in README.md"
+    },
+    {
+      "name": "delivery workflows mention prompt usage and skills",
+      "passed": true,
+      "detail": "All required strings found in docs/guide/delivery-workflows.md"
+    },
+    {
+      "name": "gap plan includes final documentation phase",
+      "passed": true,
+      "detail": "All required strings found in docs/guide/aidd-gap-closure-plan.md"
+    }
+  ]
+}

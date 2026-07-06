@@ -1,0 +1,9 @@
+# Harmonic Coding local workflow toggles
+
+requireVisionRead: true
+strictTddModeDefault: true
+requireDocumentationUpdates: true
+requireReviewRepairLoop: true
+requireSecurityReviewForWorkflowChanges: true
+enableWorkflowContractEvals: true
+enableUserTestingWorkflows: true
